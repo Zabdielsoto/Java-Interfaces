@@ -1,0 +1,66 @@
+import java.util.Scanner;
+
+public class Trabajador{
+  public static void main(String args[]){
+
+   Scanner input = new Scanner(System.in);
+   String nombre = "";
+   int clave = 0, años = 0, dias= 0;
+
+   System.out.println("Nombre del trabajador: ");
+   nombre = input.nextLine();
+
+   System.out.println("Clave del trabajador: ");
+   clave = input.nextInt();
+
+   System.out.println("Numero de años de servicio: ");
+   años = input.nextInt();
+
+   if(clave == 1){
+    if(años == 1){
+     dias = 6;
+   }
+    else if(años >= 2 && años <= 6){
+     dias = 14;
+   }
+    else if(años >=7){
+     dias = 20;
+   }
+    else{
+     dias = 0;
+   }
+  }
+   else if(clave == 2){
+    if(años == 1){
+     dias = 7;
+   }
+    else if(años >= 2 && años <= 6){
+     dias = 15;
+   }
+    else if(años >=7){
+     dias = 22;
+   }
+    else{
+     dias = 0;
+   }
+  }
+   else if(clave == 3){
+    if(años == 1){
+     dias = 10;
+   }
+    else if(años >= 2 && años <= 6){
+     dias = 20;
+   }
+    else if(años >=7){
+     dias = 30;
+   }
+    else{
+     dias = 0;
+   }
+  }
+   else{
+    System.out.println("La clave ingresada no existe");
+  }
+   System.out.println("A " + nombre + " le tocan " + dias + " dias de vacaciones");
+ } 
+}
