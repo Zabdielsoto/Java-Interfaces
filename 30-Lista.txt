@@ -1,0 +1,36 @@
+import javax.swing.*;
+import java.awt.event.*;
+
+public class Lista extends JFrame implements ItemListener{
+
+  private JComboBox lista;
+
+  public Lista(){
+   setLayout(null);
+   lista = new JComboBox("");
+   lista.setBounds(10,10,80,20);
+   add(lista);
+
+   lista.addItem("Rojo");
+   lista.addItem("Verde");
+   lista.addItem("Azul");
+   lista.addItem("Amarillo");
+   lista.addItem("Negro");
+   lista.addItemListener(this);
+ }
+
+  public void itemStateChanged(ItemEvent e){
+   if(e.getSource == lista){
+    String txt = lista.getSelectedItem().toString();
+    setTitle(txt); 
+  }
+ }
+
+  public static void main(String args[]){
+   Lista interfaz = new Lista();
+   interfaz.setBounds(0,0,200,150);
+   interfaz.setVisible(true);
+   interfaz.setResizable(false);
+   interfaz.setLocationRelativeTo(null); 
+ }
+}

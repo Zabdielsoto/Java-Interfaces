@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Caracteres{
+  public static void main(String args[]){
+
+   String cadena1 = "", cadena2 = "";
+   int longuitud = 0, inicio = 0, finaL = 0;
+   Scanner input = new Scanner(System.in);
+
+   System.out.print("Ingrese una cadena de caracteres: ");
+   cadena1 = input.nextLine();
+   longuitud = cadena1.length();
+   
+   System.out.println("La longuitud de la cadena de caracteres es " + longuitud);
+
+   System.out.println("Ingrese el rango de la parte de la cadena que desea obtener");
+   System.out.print("Desde: ");
+   inicio = input.nextInt();
+   System.out.print("Hasta: ");
+   finaL = input.nextInt();
+
+   cadena2 = cadena1.substring(inicio,finaL);
+   System.out.println("La cadena nueva es: " + cadena2);
+ }
+}

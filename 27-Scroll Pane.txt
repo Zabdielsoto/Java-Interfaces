@@ -1,0 +1,28 @@
+import javax.swing.*;
+
+public class Scroll extends JFrame{
+
+  private JTextField textF;
+  private JTextArea textA;
+  private JScrollPane scroll;
+
+public Scroll(){
+   setLayout(null);
+   textF = new JTextField();
+   textF.setBounds(10,10,200,30);
+   add(textF);
+
+   textA = new JTextArea();
+   scroll = new JScrollPane(textA);
+   scroll.setBounds(10,50,400,300);
+   add(scroll);
+ }
+
+  public static void main(String args[]){
+   Scroll interfaz = new Scroll();
+   interfaz.setBounds(0,0,540,400);
+   interfaz.setVisible(true);
+   interfaz.setResizable(false);
+   interfaz.setLocationRelativeTo(null);
+ }
+}

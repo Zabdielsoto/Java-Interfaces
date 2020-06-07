@@ -1,0 +1,40 @@
+import javax.swing.*;
+import java.awt.event.*;
+
+public class Campo extends JFrame implements ActionListener{
+
+  private JTextField texto;
+  private JButton boton;
+  private JLabel label;
+
+  public Campo(){
+   setLayout(null);
+   label = new JLabel("Usuario:");
+   label.setBounds(10,10,100,30);
+   add(label);
+
+   texto = new JTextField();
+   texto.setBounds(120,17,150,20);
+   add(texto);
+
+   boton = new JButton("Aceptar");
+   boton.setBounds(10,80,100,30);
+   add(boton);
+   boton.addActionListener(this);
+ }
+
+  public void actionPerformed(ActionEvent evento){
+   if(evento.getSource() == boton){
+    String txt = texto.getText();
+    setTitle(txt);
+  }
+ }
+
+  public static void main(String args[]){
+   Campo interfaz = new Campo();
+   interfaz.setBounds(0,0,300,150);
+   interfaz.setVisible(true);
+   interfaz.setResizable(false);
+   interfaz.setLocationRelativeTo(null);
+ }
+}

@@ -1,0 +1,25 @@
+import java.util.Scanner
+
+public class MDinamico{
+  public static void main(String args[]){
+
+   int filas = 0, columnas = 0, contador = 1;
+   Scanner input = new Scanner(System.in);
+
+   System.out.print("Digite el numero de filas: ");
+   filas = input.nextInt();
+   System.out.print("Digite el numero de columnas: ");
+   columnas = input.nextInt();
+
+   int matriz[][] = new int[filas][columnas];
+
+   for(int i = 0; i < filas; i++){
+    for(int j = 0; j < columnas; j++){
+     matriz[i][j] = contador;
+     System.out.print("[" + matriz[i][j] + "] ");
+     contador++;
+   }
+    System.out.println("");
+  }
+ }
+}

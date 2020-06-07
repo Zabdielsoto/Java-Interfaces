@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class VDinamico{
+  public static void main(String args[]){
+
+   Scanner input = new Scanner(System.in);
+   int numero = 0;
+
+   System.out.print("Digite la cantidad de posiciones del vector: ");
+   numero = input.nextInt();
+
+   int vector[] = new int[numero];
+
+   for(int i = 0; i < numero; i++){
+    System.out.print("Digite el numero para la posicion " + i + ": ");
+    vector[i] = input.nextInt();
+  }
+
+   System.out.println(" ");
+   System.out.println("Los datos dentro del vector son: "); 
+   for(int i = 0; i < numero; i++){
+    System.out.print("[" + vector[i] + "] ");
+  }
+ }
+}

@@ -1,0 +1,51 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Menu extends JFrame implements ActionListener{
+
+  private JMenuBar barra;
+  private JMenu menu;
+  private JMenuItem mitem1, mitem2, mitem3;
+
+  public Menu(){
+   setLayout(null);
+   barra = new JMenuBar();
+   setJMenuBar(barra);
+
+   menu = new JMenu("Opciones");
+   barra.add(menu);
+
+   mitem1 = new JMenuItem("Rojo");
+   mitem1.addActionListener(this);
+   menu.add(mitem1);
+
+   mitem2 = new JMenuItem("Verde");
+   mitem2.addActionListener(this);
+   menu.add(mitem2);
+
+   mitem3 = new JMenuItem("Azul");
+   mitem3.addActionListener(this);
+   menu.add(mitem3);
+ }
+
+  public void actionPerformed(ActionEvent e){
+   Container fondo = this.getContentPane();
+   if(e.getSource() == mitem1){
+    fondo.setBackground(new Color(255,0,0));
+  }
+   if(e.getSource() == mitem2){
+    fondo.setBackground(new Color(0,255,0));
+  }
+   if(e.getSource() == mitem3){
+    fondo.setBackground(new Color(0,0,255));
+  }
+ }
+
+  public static void main(String args[]){
+   Menu interfaz = new Menu();
+   interfaz.setBounds(0,0,400,300);
+   interfaz.setVisible(true);
+   interfaz.setLocationRelativeTo(null);
+ }
+}

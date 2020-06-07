@@ -1,0 +1,26 @@
+import javax.swing.*;
+
+public class TextArea extends JFrame{
+
+  private JTextField textF;
+  private JTextArea textA;
+
+  public TextArea(){
+   setLayout(null);
+   textF = new JTextField();
+   textF.setBounds(10,10,200,30);
+   add(textF);
+
+   textA = new JTextArea();
+   textA.setBounds(10,50,400,300);
+   add(textA);
+ }
+
+  public static void main(String args[]){
+   TextArea interfaz = new TextArea();
+   interfaz.setBounds(0,0,550,400);
+   interfaz.setVisible(true);
+   interfaz.setResizable(false);
+   interfaz.setLocationRelativeTo(null);
+ }
+}

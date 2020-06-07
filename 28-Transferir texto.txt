@@ -1,0 +1,44 @@
+import javax.swing.*;
+import java.awt.event.*;
+
+public class Transferir extends JFrame implements ActionListener{
+
+  private JTextField textF;
+  private JTextArea textA;
+  private JScrollPane scroll;
+  private JButton boton;
+  String txt = "";
+
+  public Transferir(){
+   setLayout(null);
+   textF = new JTextField();
+   textF.setBounds(10,10,200,30);
+   add(textF);
+
+   boton = new JButton("Agregar");
+   boton.setBounds(250,10,100,30);
+   add(boton);
+   boton.addActionListener(this);
+
+   textA = new JTextArea();
+   scroll = new JScrollPane(textA);
+   scroll.setBounds(10,50,400,300);
+   add(scroll);
+ }
+
+  public void actionPerformed(ActionEvent e){
+   if(e.getSource() == boton){
+    txt += textF.getText() + "\n";
+    textA.setText(txt);
+    textF.setText("");
+  }
+ }
+
+public static void main(String args[]){
+   Transferir interfaz = new Transferir();
+   interfaz.setBounds(0,0,550,400);
+   interfaz.setVisible(true);
+   interfaz.setResizable(false);
+   interfaz.setLocationRelativeTo(null);
+ }
+}

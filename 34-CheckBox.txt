@@ -1,0 +1,49 @@
+import javax.swing.*;
+import javax.swing.event.*;
+
+public class CheckBox extends JFrame implements ChangeListener{
+
+  private JCheckBox box1, box2, box3;
+
+  public CheckBox(){
+   setLayout(null);
+   box1 = new JCheckBox("Ingles");
+   box1.setBounds(10,10,150,30);
+   box1.addChangeListener(this);
+   add(box1);
+
+   box2 = new JCheckBox("Frances");
+   box2.setBounds(10,50,150,30);
+   box2.addChangeListener(this);
+   add(box2);
+
+   box3 = new JCheckBox("Aleman");
+   box3.setBounds(10,90,150,30);
+   box3.addChangeListener(this);
+   add(box3);
+ }
+
+  public void stateChange(ChangeEvent e){
+   String txt = "";
+   if(box1.isSelected() == true){
+    txt = txt + "Ingles-";
+    setTitle(txt);
+  }
+   if(box2.isSelected() == true){
+    txt = txt + "Frances-";
+    setTitle(txt);    
+  }
+   if(box3.isSelected() == true){
+    txt = txt + "Aleman-";
+    setTitle(txt);    
+  }
+ }
+
+  public static void main(String args[]){
+   CheckBox interfaz = new CheckBox();
+   interfaz.setBounds(0,0,350,200);
+   interfaz.setVisible(true);
+   interfaz.setResizable(false);
+   interfaz.setLocationRelativeTo(null);
+ }
+}

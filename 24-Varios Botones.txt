@@ -1,0 +1,50 @@
+import javax.swing.*;
+import java.awt.event.*;
+
+public class VBotones extends JFrame implements ActionListener{
+
+  private JButton boton1, boton2, boton3;
+  private JLabel label;
+
+  public VBotones(){
+   setLayout(null);
+   boton1 = new JButton("1");
+   boton1.setBounds(10,100,90,30);
+   add(boton1);
+   boton1.addActionListener(this);
+
+   boton2 = new JButton("2");
+   boton2.setBounds(110,100,90,30);
+   add(boton2);
+   boton2.addActionListener(this);
+
+   boton3 = new JButton("3");
+   boton3.setBounds(210,100,90,30);
+   add(boton3);
+   boton3.addActionListener(this);
+
+   label = new JLabel("En espera");
+   label.setBounds(10,10,300,30);
+   add(label);
+ }
+
+  public void actionPerformed(ActionEvent evento){
+   if(evento.getSource() == boton1){
+    label.setText("Has presionado el boton 1");
+  }
+   if(evento.getSource() == boton2){
+    label.setText("Has presionado el boton 2");
+  }
+   if(evento.getSource() == boton3){
+    label.setText("Has presionado el boton 3");
+  }
+ }
+
+  public static void main(String args[]){
+   VBotones interfaz = new VBotones();
+   interfaz.setBounds(0,0,350,200);
+   interfaz.setVisible(true);
+   interfaz.setResizable(false);
+   interfaz.setLocationRelativeTo(null);
+ }
+}

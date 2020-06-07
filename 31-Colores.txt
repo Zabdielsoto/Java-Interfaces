@@ -1,0 +1,74 @@
+import javax.swing.*;
+import java.awt.event.*;
+import java.awt.*;
+
+public class Colores extends JFrame implements ActionListener{
+
+  private JLabel label1, label2, label3;
+  private JButton boton;
+  private JComboBox lista1, lista2, lista3;
+
+  public Colores(){
+   setLayout(null);
+   label1 = new JLabel("Rojo");
+   label1.setBounds(10,10,100,10);
+   add(label1);
+
+   lista1 = new JComboBox();
+   lista1.setBounds(120,10,50,30);
+   for(int i = 0; i < 256; i++){
+    lista1.addItem(String.valueOf(i));
+  }
+   add(lista1);
+
+   label2 = new JLabel("Verde");
+   label2.setBounds(10,50,100,10);
+   add(label2);
+
+   lista2 = new JComboBox();
+   lista2.setBounds(120,50,50,30);
+   for(int i = 0; i < 256; i++){
+    lista2.addItem(String.valueOf(i));
+  }
+   add(lista2);
+
+   label3 = new JLabel("Azul");
+   label3.setBounds(10,90,100,10);
+   add(label3);
+
+   lista3 = new JComboBox();
+   lista3.setBounds(120,90,50,30);
+   for(int i = 0; i < 256; i++){
+    lista3.addItem(String.valueOf(i));
+  }
+   add(lista3);
+
+   boton = new JButton("Fijar Color");
+   boton.setBounds(10,130,100,30);
+   add(boton);
+   boton.addActionListener(this);
+ }
+
+  public void actionPerformed(ActionEvent e){
+   if(e.getSource() == boton){
+    String cad1 = lista1.getSelectedItem().toString();
+    String cad2 = lista2.getSelectedItem().toString();
+    String cad3 = lista3.getSelectedItem().toString();
+
+    int rojo = Integer.parseInt(cad1);
+    int verde = Integer.parseInt(cad2);
+    int azul = Integer.parseInt(cad3);
+
+    Color color = new Color(rojo,verde,azul);
+    boton.setBackground(color);
+  }
+ }
+
+  public static void main(String args[]){
+   Colores interfaz = new Colores();
+   interfaz.setBounds(0,0,190,220);
+   interfaz.setVisible(true);
+   interfaz.setResizable(false);
+   interfaz.setLocationRelativeTo(null);
+ }
+}
