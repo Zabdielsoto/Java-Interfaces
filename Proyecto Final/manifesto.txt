@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Created-By: Aathoz
+Main-Class: Bienvenida
+X-COMMENT: Proyecto Final Curso Java Basico
+
