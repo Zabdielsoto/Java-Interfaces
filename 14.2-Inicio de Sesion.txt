@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Usuario{
+  public static void main(String args[]){
+
+   String contraseña = "12345", contra = "0";
+   String usuario = "Zabdiel",  nombre = "";
+   Scanner input = new Scanner(System.in);
+
+   System.out.println("Bienvenido");
+   System.out.print("Digite nombre de usuario: ");
+   nombre = input.nextLine();
+   
+   System.out.print("Digite la contraseña: ");
+   contra = input.nextLine();
+
+   if(nombre.equals(usuario) && contra.equals(contraseña)){
+    System.out.println("Inicio de Sesion Correcto");
+  } else System.out.println("Nombre de usuario o contraseña incorrectos");
+ }
+}
