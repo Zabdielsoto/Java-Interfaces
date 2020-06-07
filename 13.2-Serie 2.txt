@@ -1,0 +1,37 @@
+public class Serie2{
+  public static void main (String args[]){
+
+   int x = 99;
+   System.out.println("Metodo For");
+   for(int i = 1; i <= 5; i++){
+    if(i < 5){
+     System.out.print(i + ", " + x + ", ");
+   } else System.out.println(i + ", " + x);
+    x--;
+  }
+
+   int i = 1;
+   x = 99;
+   System.out.println(" ");
+   System.out.println("Metodo While");
+   while(i <= 5){
+    if(i < 5){
+     System.out.print(i + ", " + x + ", ");
+   } else System.out.println(i + ", " + x);
+    i++;
+    x--; 
+  }
+
+   i = 1;
+   x = 99;
+   System.out.println(" ");
+   System.out.println("Metodo Do-While");
+   do{
+    if(i < 5){
+     System.out.print(i + ", " + x  + ", ");
+   } else System.out.println(i + ", " + x);
+    i++;
+    x--;
+  } while (i <= 5);
+ }
+}
